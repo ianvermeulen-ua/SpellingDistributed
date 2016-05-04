@@ -1,8 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
-    <head>
-        
-    </head>
+<%@include file="header.jsp" %>
     <form action="./correct" method="post">
         <label for="faulty-sentence"> Type your sentence </label>
         <input type="text" name="faulty-sentence"/>
@@ -11,4 +7,4 @@
     <div>
         ${correctedString}
     </div>
-</html>
+<%@include file="footer.jsp" %>

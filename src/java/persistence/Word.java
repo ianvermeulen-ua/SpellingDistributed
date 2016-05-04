@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -27,6 +29,8 @@ import javax.persistence.NamedQuery;
     @NamedQuery(name="Word.findContent", query="SELECT w FROM Word w WHERE w.content = :content")})
 public class Word implements Serializable {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="ID")
     private int id;
     
     @Column
@@ -72,6 +76,10 @@ public class Word implements Serializable {
 
     public void setFrequency(int frequency) {
         this.frequency = frequency;
+    }
+    
+    public void incrementFrequency() {
+        this.frequency++;
     }
     
     public double getDistanceLs(Word otherWord) {

@@ -19,7 +19,7 @@ import persistence.Word;
 import util.NGramGenerator;
 
 @Stateless
-public class CorrectorBean implements CorrectorBeanLocal{
+public class CorrectorBean implements CorrectorBeanLocal {
     @EJB
     private WordBeanLocal voc;
     
